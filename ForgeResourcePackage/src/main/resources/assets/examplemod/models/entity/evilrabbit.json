@@ -1,0 +1,6 @@
+{
+  "parent": "entity/rabbit",
+  "textures": {
+    "layer0:": "examplemod:textures.entity.evilrabbit.png"
+  }
+}

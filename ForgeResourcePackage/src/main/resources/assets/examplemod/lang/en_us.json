@@ -1,0 +1,28 @@
+{
+  "item.examplemod.structuregel": "Structure Gel",
+  "block.examplemod.castlewall": "Castle Wall",
+  "item.examplemod.gelore": "Gel ore",
+  "item.examplemod.yellowface": "Face",
+  "item.examplemod.mydog": "Snowy",
+  "item.examplemod.mcdonalds": "McDonalds",
+  "item.examplemod.teleportrod": "Teleport Rod",
+  "item.examplemod.lightninghammer": "Lightning Hammer",
+  "item.examplemod.gelpickaxe": "Gel Pickaxe",
+  "block.examplemod.geloreblock": "Gel Ore Block",
+  "block.examplemod.rubber": "Rubber Block",
+  "block.examplemod.creepingmold": "Creeping Mold Block",
+  "entity.examplemod.zombo": "Zombo",
+  "item.examplemod.zombo_egg": "Zombo Spawn Egg",
+  "item.examplemod.launcher": "TNT Launcher",
+  "item.examplemod.bombarrow": "Bomb Arrow",
+  "item.examplemod.doglauncher": "Dog Stick",
+  "item.examplemod.flamethrower": "Flamethrower",
+  "item.examplemod.customhelm": "Custom Helm",
+  "item.examplemod.concreteshooter": "Concrete Shooter",
+  "item.examplemod.arrowlauncher": "Arrow Launcher",
+  "entity.examplemod.evilrabbit": "Evil Rabbit",
+  "item.examplemod.evilrabbit_egg": "Evil Rabbit Spawn Egg",
+  "item.examplemod.lightningarrow": "Lightning Arrow",
+  "item.examplemod.mace": "Mace"
+}
+}
