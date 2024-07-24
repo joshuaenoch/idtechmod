@@ -4,43 +4,43 @@ import com.idtech.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ChargedCreeperSpawnerItem extends Item {
+// Feel free to change the name of the item
+// But remember the class and file name have to be the same
+public class ChallengeItem extends Item {
 
-    //constructor and properties
-    public ChargedCreeperSpawnerItem(Properties properties) {
+    public ChallengeItem(Properties properties) {
         super(properties);
     }
     private static Properties properties = new Properties().tab(CreativeModeTab.TAB_MISC);
 
-    //static instance for registration
-    public static Item INSTANCE = new ChargedCreeperSpawnerItem(properties).setRegistryName("creeperspawner");
+    public static Item INSTANCE = new ChallengeItem(properties).setRegistryName("challengeitem");
 
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player playerIn, InteractionHand handIn) {
-        //find the location at the cursor
+
         BlockPos location = Utils.getBlockAtCursor(playerIn, 200.0d, true);
 
-        //as long as the location exists
         if(location != null){
-            Creeper creeper = EntityType.CREEPER.create(level);
-            location = location.above();
-            Utils.spawnEntity(level, creeper, location);
-            //strike lightning
+            // CHANGE THE CODE HERE TO SPAWN ANY ENTITY
+
+            // Tip:
+            // You can create an entity variable like this: Creeper creeper = EntityType.CREEPER.create(level);
+
+            Utils.createExplosion(level, location, 5.0f);
             Utils.strikeLightning(level, location);
         }
 
-        //get the held item for return
         ItemStack itemstack = playerIn.getItemInHand(handIn);
-        //return pass
         return InteractionResultHolder.pass(itemstack);
     }
 }
+
+// Don't forget to register the item in ItemMod. Texture or name change isn't required for tickets but still feel
+// free to do so

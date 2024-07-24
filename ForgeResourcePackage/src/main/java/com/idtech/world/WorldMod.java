@@ -4,6 +4,7 @@ import com.idtech.BaseMod;
 import com.idtech.block.BlockMod;
 import com.idtech.block.RubberBlock;
 import com.idtech.entity.EvilRabbit;
+import com.idtech.entity.MarshyEntity;
 import com.idtech.entity.ZomboEntity;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -80,6 +81,11 @@ public class WorldMod {
         if(biomeCategory == Biome.BiomeCategory.MOUNTAIN){
             spawner.addSpawn(MobCategory.MONSTER,
                     new MobSpawnSettings.SpawnerData(ZomboEntity.TYPE, 5, 2, 8));
+        }
+
+        if(biomeCategory == Biome.BiomeCategory.UNDERGROUND){
+            spawner.addSpawn(MobCategory.MONSTER,
+                    new MobSpawnSettings.SpawnerData(MarshyEntity.TYPE, 5, 2, 8));
         }
 
         if(biomeCategory == Biome.BiomeCategory.THEEND){

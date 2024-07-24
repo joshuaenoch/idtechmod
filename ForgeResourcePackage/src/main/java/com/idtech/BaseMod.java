@@ -7,12 +7,15 @@ import com.idtech.item.*;
 
 import com.idtech.world.RubberPeaksBiome;
 import com.idtech.world.WorldMod;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -20,6 +23,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -74,6 +78,7 @@ public class BaseMod {
        // TierSortingRegistry.registerTier(ItemMod.GEL_TIER, new ResourceLocation(MODID, "gelore"), List.of(Tiers.NETHERITE), List.of());
 
         BaseMod.LOGGER.info("Command registration here hopefully.");
+        //MinecraftForge.EVENT_BUS.register(CrouchEventHandler.class);
 //        MinecraftForge.EVENT_BUS.register(CustomEvent.class);
 //        MinecraftForge.EVENT_BUS.addListener(EventMod::isHoldingEvent);
         //Adds the RegisterCommandEvent as an event and sets a listener for it during FMLCommonSetup
@@ -186,6 +191,7 @@ public class BaseMod {
         public static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event)
         {
             event.registerLayerDefinition(EvilRabbitModel.LAYER_LOCATION, EvilRabbitModel::createBodyLayer);
+            event.registerLayerDefinition(MarshyModel.LAYER_LOCATION, MarshyModel::createBodyLayer);
         }
     }
 }

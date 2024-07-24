@@ -13,16 +13,19 @@ public class EntityMod {
     public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
         event.getRegistry().register(ZomboEntity.TYPE);
         event.getRegistry().register(EvilRabbit.TYPE);
+        event.getRegistry().register(MarshyEntity.TYPE);
     }
     @SubscribeEvent
     public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(ZomboEntity.EGG);
         event.getRegistry().register(EvilRabbit.EGG);
+        event.getRegistry().register(MarshyEntity.EGG);
     }
     @SubscribeEvent
     public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
         event.registerEntityRenderer(EvilRabbit.TYPE, EvilRabbitRenderFactory.INSTANCE);
+        event.registerEntityRenderer(MarshyEntity.TYPE, MarshyRenderFactory.INSTANCE);
     }
 
     // this is different than in 1.16 but everything else is the same
@@ -31,6 +34,7 @@ public class EntityMod {
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
         event.put(ZomboEntity.TYPE, ZomboEntity.createAttributes().build());
         event.put(EvilRabbit.TYPE, EvilRabbit.createAttributes().build());
+        event.put(MarshyEntity.TYPE, MarshyEntity.createAttributes().build());
     }
 
 }

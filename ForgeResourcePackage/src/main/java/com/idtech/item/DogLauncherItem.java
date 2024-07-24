@@ -40,10 +40,10 @@ public class DogLauncherItem extends Item {
             wolf.moveTo(eyeX, eyeY, eyeZ, playerIn.getYRot(), 0.0F);
 
             // Set the wolf's attributes to make it appear wild
-            wolf.setTame(false); // Make sure the wolf is untamed
+            wolf.setTame(false); // Make sure the wolf is un tamed
 
             // Set initial motion for shooting straight forward
-            double speed = 2.5; // Adjust this value for initial speed
+            double speed = 4; // Adjust this value for initial speed
             wolf.setDeltaMovement(lookVector.x * speed, lookVector.y * speed, lookVector.z * speed);
 
             if (wolf instanceof LivingEntity) {

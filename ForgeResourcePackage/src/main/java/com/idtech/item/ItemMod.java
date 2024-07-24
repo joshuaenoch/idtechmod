@@ -2,6 +2,7 @@ package com.idtech.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -49,6 +50,8 @@ public class ItemMod {
         event.getRegistry().register(ArrowLauncherItem.INSTANCE);
         event.getRegistry().register(SnowballLauncherItem.INSTANCE);
         event.getRegistry().register(ChargedCreeperSpawnerItem.INSTANCE);
+        event.getRegistry().register(ShulkerLauncherItem.INSTANCE);
+        event.getRegistry().register(BombItem.INSTANCE);
 
 
         // TOOLS

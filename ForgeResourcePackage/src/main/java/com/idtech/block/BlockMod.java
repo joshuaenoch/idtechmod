@@ -27,6 +27,8 @@ public class BlockMod {
         event.getRegistry().register(GEL_ORE_BLOCK_ITEM);
         event.getRegistry().register(RubberBlock.ITEM);
         event.getRegistry().register(CreepingMoldBlock.ITEM);
+        event.getRegistry().register(PigBlock.ITEM);
+        event.getRegistry().register(SpecialTorch.ITEM);
     }
 
     @SubscribeEvent
@@ -36,6 +38,8 @@ public class BlockMod {
         event.getRegistry().register(GEL_ORE_BLOCK);
         event.getRegistry().register(RubberBlock.INSTANCE);
         event.getRegistry().register(CreepingMoldBlock.INSTANCE);
+        event.getRegistry().register(PigBlock.INSTANCE);
+        event.getRegistry().register(SpecialTorch.INSTANCE);
     }
 }
 
