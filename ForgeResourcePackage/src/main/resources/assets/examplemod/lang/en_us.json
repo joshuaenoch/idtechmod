@@ -23,6 +23,15 @@
   "entity.examplemod.evilrabbit": "Evil Rabbit",
   "item.examplemod.evilrabbit_egg": "Evil Rabbit Spawn Egg",
   "item.examplemod.lightningarrow": "Lightning Arrow",
-  "item.examplemod.mace": "Mace"
-}
+  "item.examplemod.mace": "Mace",
+  "item.examplemod.creeperspawner": "Charged Creeper Spawner",
+  "item.examplemod.snowballlauncher": "Snowball Launcher",
+  "block.examplemod.pigblock": "Pig Block",
+  "item.examplemod.shulkerlauncher": "Shulker Launcher",
+  "item.examplemod.marshy_egg": "Marshy Spawn Egg",
+  "item.examplemod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "block.examplemod.lucky": "Lucky Block",
+  "block.examplemod.suspiciousdirt": "Suspicious Dirt",
+  "item.examplemod.acid_bucket": "Acid Bucket",
+  "item.examplemod.bomb": "Bomb"
 }

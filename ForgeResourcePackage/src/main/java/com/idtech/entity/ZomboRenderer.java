@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.entity.ZombieRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Zombie;
 
-public class ZomboRenderer extends ZombieRenderer{
+public class  ZomboRenderer extends ZombieRenderer{
     public ZomboRenderer(EntityRendererProvider.Context provider) {
         super(provider);
     }

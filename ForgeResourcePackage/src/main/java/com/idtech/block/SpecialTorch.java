@@ -15,14 +15,14 @@ import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
-public class SpecialTorch extends Block {
+public class SpecialTorch extends WallTorchBlock {
     private static BlockBehaviour.Properties properties = BlockBehaviour.Properties.of(Material.DECORATION).lightLevel((state) -> 15);
 
     public static Block INSTANCE = new SpecialTorch(properties).setRegistryName(BaseMod.MODID, "specialtorch");
-    public static Item ITEM = BlockUtils.createBlockItem(INSTANCE, CreativeModeTab.TAB_MISC);
+    //public static Item ITEM = BlockUtils.createBlockItem(INSTANCE, CreativeModeTab.TAB_MISC);
 
     public SpecialTorch(BlockBehaviour.Properties properties) {
-        super(properties);
+        super(properties, ParticleTypes.FLAME);
         // super(properties, ParticleTypes.FLAME);
     }
 }

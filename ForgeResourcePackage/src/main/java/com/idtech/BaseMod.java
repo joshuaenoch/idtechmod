@@ -3,11 +3,15 @@ package com.idtech;
 import com.idtech.block.*;
 import com.idtech.enchantment.EnchantmentMod;
 import com.idtech.entity.*;
+import com.idtech.fluid.ModFluids;
 import com.idtech.item.*;
 
+import com.idtech.sounds.ModSounds;
 import com.idtech.world.RubberPeaksBiome;
 import com.idtech.world.WorldMod;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -27,6 +31,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -63,6 +68,11 @@ public class BaseMod {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ItemMod.register(eventBus);
+        ModSounds.register(eventBus);
+        ModFluids.register(eventBus);
     }
 
     /**
@@ -168,7 +178,7 @@ public class BaseMod {
         public static void registerBiomes(final RegistryEvent.Register<Biome> event) {
             BaseMod.LOGGER.info("Registering Biomes");
             // Add biome registry calls here
-            //event.getRegistry.register(RubberPeaksBiome.INSTANCE);
+            //       event.getRegistry.register(RubberPeaksBiome.INSTANCE);
             WorldMod.registerBiomes(event);
 
         }
@@ -192,6 +202,11 @@ public class BaseMod {
         {
             event.registerLayerDefinition(EvilRabbitModel.LAYER_LOCATION, EvilRabbitModel::createBodyLayer);
             event.registerLayerDefinition(MarshyModel.LAYER_LOCATION, MarshyModel::createBodyLayer);
+
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.ACID_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.ACID_FLUID.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.ACID_FLOWING.get(), RenderType.translucent());
         }
     }
 }
