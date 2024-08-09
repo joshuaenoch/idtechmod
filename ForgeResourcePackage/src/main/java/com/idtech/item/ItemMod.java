@@ -1,6 +1,7 @@
 package com.idtech.item;
 
 import com.idtech.BaseMod;
+import com.idtech.entity.Bomb;
 import com.idtech.fluid.ModFluids;
 import com.idtech.sounds.ModSounds;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -46,9 +47,6 @@ public class ItemMod {
             () -> new BucketItem(() -> ModFluids.ACID_FLUID.get(),
                     new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
-    public static final RegistryObject<Item> BOMB_ITEM = ITEMS.register("bomb",
-            () -> new BombItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -78,6 +76,8 @@ public class ItemMod {
         event.getRegistry().register(SnowballLauncherItem.INSTANCE);
         event.getRegistry().register(ChargedCreeperSpawnerItem.INSTANCE);
         event.getRegistry().register(ShulkerLauncherItem.INSTANCE);
+        event.getRegistry().register(FireballLauncher.INSTANCE);
+        event.getRegistry().register(WololoItem.INSTANCE);
 
         // TOOLS
         event.getRegistry().register(GelPickaxeItem.INSTANCE);
@@ -96,5 +96,6 @@ public class ItemMod {
         event.getRegistry().register(BombArrowItem.INSTANCE);
         event.getRegistry().register(LightningArrowItem.INSTANCE);
         //event.getRegistry().register(TrackingArrowItem.INSTANCE);
+        event.getRegistry().register(BombItem.INSTANCE);
     }
 }

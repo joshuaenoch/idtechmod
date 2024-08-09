@@ -18,9 +18,9 @@ public class EntityMod {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITIES, BaseMod.MODID);
 
-    public static final RegistryObject<EntityType<Bomb>> BOMB =
+    /*public static final RegistryObject<EntityType<Bomb>> BOMB =
             ENTITY_TYPES.register("bombentity", () -> EntityType.Builder.<Bomb>of(Bomb::new, MobCategory.MISC)
-                    .sized(0.5f, 0.5f).build("bombentity"));
+                    .sized(0.5f, 0.5f).build("bombentity"));*/
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
@@ -31,18 +31,21 @@ public class EntityMod {
         event.getRegistry().register(ZomboEntity.TYPE);
         event.getRegistry().register(EvilRabbit.TYPE);
         event.getRegistry().register(MarshyEntity.TYPE);
+        event.getRegistry().register(FatherZomboEntity.TYPE);
     }
     @SubscribeEvent
     public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(ZomboEntity.EGG);
         event.getRegistry().register(EvilRabbit.EGG);
         event.getRegistry().register(MarshyEntity.EGG);
+        event.getRegistry().register(FatherZomboEntity.EGG);
     }
     @SubscribeEvent
     public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(ZomboEntity.TYPE, ZomboRenderFactory.INSTANCE);
         event.registerEntityRenderer(EvilRabbit.TYPE, EvilRabbitRenderFactory.INSTANCE);
         event.registerEntityRenderer(MarshyEntity.TYPE, MarshyRenderFactory.INSTANCE);
+        event.registerEntityRenderer(FatherZomboEntity.TYPE, FatherZomboRenderFactory.INSTANCE);
     }
 
     // this is different than in 1.16 but everything else is the same
@@ -52,6 +55,7 @@ public class EntityMod {
         event.put(ZomboEntity.TYPE, ZomboEntity.createAttributes().build());
         event.put(EvilRabbit.TYPE, EvilRabbit.createAttributes().build());
         event.put(MarshyEntity.TYPE, MarshyEntity.createAttributes().build());
+        event.put(FatherZomboEntity.TYPE, FatherZomboEntity.createAttributes().build());
     }
 
 }

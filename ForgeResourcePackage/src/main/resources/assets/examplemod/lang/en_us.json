@@ -28,10 +28,13 @@
   "item.examplemod.snowballlauncher": "Snowball Launcher",
   "block.examplemod.pigblock": "Pig Block",
   "item.examplemod.shulkerlauncher": "Shulker Launcher",
+  "entity.examplemod.marshy": "Marshy",
   "item.examplemod.marshy_egg": "Marshy Spawn Egg",
   "item.examplemod.bar_brawl_music_disc": "Bar Brawl Music Disc",
   "block.examplemod.lucky": "Lucky Block",
   "block.examplemod.suspiciousdirt": "Suspicious Dirt",
   "item.examplemod.acid_bucket": "Acid Bucket",
-  "item.examplemod.bomb": "Bomb"
+  "item.examplemod.bomb": "Bomb",
+  "entity.examplemod.fatherzombo": "Father Zombo",
+  "item.examplemod.fatherzombo_egg": "Father Zombo Spawn Egg"
 }

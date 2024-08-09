@@ -15,9 +15,15 @@ import net.minecraft.world.level.Level;
 
 public class BombItem extends Item {
 
-    public BombItem(Item.Properties p_43140_) {
-        super(p_43140_);
+    private static Properties properties = new Properties().tab(CreativeModeTab.TAB_MISC);
+
+    public BombItem(Properties properties)
+    {
+        super (properties);
     }
+
+    public static Item INSTANCE = new BombItem(properties).setRegistryName("bomb");
+
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);

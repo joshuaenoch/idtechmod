@@ -25,29 +25,33 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ZomboEntity extends Zombie{
+public class FatherZomboEntity extends Zombie{
 
-    //private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
+    private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
 
-    public ZomboEntity(EntityType<? extends Zombie> type, Level level) {
+    public FatherZomboEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
 
-    public static EntityType<ZomboEntity> TYPE = (EntityType<ZomboEntity>)
-            EntityType.Builder.of(ZomboEntity::new, MobCategory.MONSTER)
-                    .build("zombo")
-                    .setRegistryName(BaseMod.MODID, "zombo");
+    public static EntityType<FatherZomboEntity> TYPE = (EntityType<FatherZomboEntity>)
+            EntityType.Builder.of(FatherZomboEntity::new, MobCategory.MONSTER)
+                    .build("fatherzombo")
+                    .setRegistryName(BaseMod.MODID, "fatherzombo");
 
     public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xb00101, 0xacbf1f);
 
-    public static AttributeSupplier.Builder createAttributes() {
+    public static AttributeSupplier.Builder createAttributes()
+    {
         return Monster.createMonsterAttributes()
-                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE)
+                .add(Attributes.MAX_HEALTH, 100)
+                .add(Attributes.MOVEMENT_SPEED, 5)
+                .add(Attributes.ATTACK_DAMAGE, 10);
     }
-/*
+
     public void startSeenByPlayer(ServerPlayer p_31483_) {
         super.startSeenByPlayer(p_31483_);
-        this.bossEvent.addPlayer(p_31483_);
+        this.bossEvent.addPlayer (p_31483_);
     }
 
     public void stopSeenByPlayer(ServerPlayer p_31488_) {
@@ -60,5 +64,9 @@ public class ZomboEntity extends Zombie{
         this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
         return true;
     }
- */
+
+    @Override
+    public boolean isSunSensitive() {
+        return false;
+    }
 }
