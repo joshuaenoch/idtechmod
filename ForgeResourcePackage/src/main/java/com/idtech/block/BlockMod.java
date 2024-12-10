@@ -2,7 +2,9 @@ package com.idtech.block;
 
 
 import com.idtech.BaseMod;
+import com.idtech.item.ItemMod;
 import com.idtech.world.FunnyTreeGrower;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +26,7 @@ public class BlockMod {
 
     //Basic Block
     public static final Block CASTLE_WALL = BlockUtils.createBasicBlock("castlewall", Material.STONE);
-    public static final Item CASTLE_WALL_ITEM = BlockUtils.createBlockItem(CASTLE_WALL, CreativeModeTab.TAB_MISC);
+public static final Item CASTLE_WALL_ITEM = new BlockItem(CASTLE_WALL, new Item.Properties().tab(CreativeModeTab.TAB_MISC).food(ItemMod.mcdonalds)).setRegistryName(CASTLE_WALL.getRegistryName());
     public static final Block GEL_ORE_BLOCK = BlockUtils.createBasicBlock("geloreblock", Material.STONE, 0.5f);
     public static final Item GEL_ORE_BLOCK_ITEM = BlockUtils.createBlockItem(GEL_ORE_BLOCK, CreativeModeTab.TAB_MISC);
     public static final Block FUNNY_LOG = BlockUtils.createBasicBlock("funnylog", Material.WOOD);

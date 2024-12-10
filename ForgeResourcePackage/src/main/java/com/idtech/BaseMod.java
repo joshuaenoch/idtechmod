@@ -222,6 +222,7 @@ public class BaseMod {
         {
             event.registerLayerDefinition(EvilRabbitModel.LAYER_LOCATION, EvilRabbitModel::createBodyLayer);
             event.registerLayerDefinition(MarshyModel.LAYER_LOCATION, MarshyModel::createBodyLayer);
+            event.registerLayerDefinition(sorenModel.LAYER_LOCATION, sorenModel::createBodyLayer);
 
 
             ItemBlockRenderTypes.setRenderLayer(ModFluids.ACID_BLOCK.get(), RenderType.translucent());

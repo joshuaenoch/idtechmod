@@ -82,6 +82,7 @@ public class ItemMod {
         // TOOLS
         event.getRegistry().register(GelPickaxeItem.INSTANCE);
         event.getRegistry().register(MaceItem.INSTANCE);
+        event.getRegistry().register(FunnyBowItem.INSTANCE);
 
         // FOOD
 

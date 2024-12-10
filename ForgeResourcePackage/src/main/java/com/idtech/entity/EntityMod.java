@@ -32,6 +32,7 @@ public class EntityMod {
         event.getRegistry().register(EvilRabbit.TYPE);
         event.getRegistry().register(MarshyEntity.TYPE);
         event.getRegistry().register(FatherZomboEntity.TYPE);
+        event.getRegistry().register(sorenEntity.TYPE);
     }
     @SubscribeEvent
     public static void registerEntityEggs(final RegistryEvent.Register<Item> event) {
@@ -39,6 +40,7 @@ public class EntityMod {
         event.getRegistry().register(EvilRabbit.EGG);
         event.getRegistry().register(MarshyEntity.EGG);
         event.getRegistry().register(FatherZomboEntity.EGG);
+        event.getRegistry().register(sorenEntity.EGG);
     }
     @SubscribeEvent
     public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
@@ -46,6 +48,7 @@ public class EntityMod {
         event.registerEntityRenderer(EvilRabbit.TYPE, EvilRabbitRenderFactory.INSTANCE);
         event.registerEntityRenderer(MarshyEntity.TYPE, MarshyRenderFactory.INSTANCE);
         event.registerEntityRenderer(FatherZomboEntity.TYPE, FatherZomboRenderFactory.INSTANCE);
+        event.registerEntityRenderer(sorenEntity.TYPE, sorenRenderFactory.INSTANCE);
     }
 
     // this is different than in 1.16 but everything else is the same
@@ -56,6 +59,7 @@ public class EntityMod {
         event.put(EvilRabbit.TYPE, EvilRabbit.createAttributes().build());
         event.put(MarshyEntity.TYPE, MarshyEntity.createAttributes().build());
         event.put(FatherZomboEntity.TYPE, FatherZomboEntity.createAttributes().build());
+        event.put(sorenEntity.TYPE, sorenEntity.createAttributes().build());
     }
 
 }
